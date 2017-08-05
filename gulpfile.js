@@ -3,6 +3,8 @@ const gulp = require('gulp'),
     uglify = require('gulp-uglify'),
     rename = require('gulp-rename'),
     sass = require('gulp-ruby-sass'),
+    less = require('gulp-less'),
+    path = require('path'),
     autoprefixer = require('gulp-autoprefixer'),
     browserSync = require('browser-sync').create();
 
@@ -28,6 +30,14 @@ const compileSASS = function (filename, options) {
         .pipe(gulp.dest(DEST+'/css'))
         .pipe(browserSync.stream());
 };
+
+gulp.task('less', function () {
+  return gulp.src('./less/**/*.less')
+    .pipe(less({
+      paths: [ path.join(__dirname, 'less', 'includes') ]
+    }))
+    .pipe(gulp.dest(DEST+'/css'))
+});
 
 gulp.task('sass', function() {
     return compileSASS('custom.css', {});

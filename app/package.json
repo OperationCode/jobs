@@ -6,6 +6,7 @@
     "type": "???",
     "url": "???"
   },
+  "main": "../build/bundle.js",
   "license": "MIT",
   "dependencies": {
     "aurelia-bootstrapper": "^2.1.1",

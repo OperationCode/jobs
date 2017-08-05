@@ -7,7 +7,7 @@ const winston = require('winston');
 const app = express();
 winston.level = 'debug';
 
-app.use(express.static(path.join(__dirname, 'public')));
+// app.use(express.static(path.join(__dirname, 'public')));
 app.engine('html', cons.swig);
 app.set('view engine', 'html');
 app.set('views', __dirname + '/views');
@@ -15,36 +15,10 @@ app.use('/src/images', express.static(__dirname + '/src/images'));
 app.use('/src/css', express.static(__dirname + '/src/css'));
 app.use('/src/js', express.static(__dirname + '/src/js'));
 app.use('/vendors', express.static(__dirname + '/vendors'));
-app.use('/build', express.static(__dirname + '/build'));
-app.use(express.cookieParser());
-app.use(express.bodyParser());
-app.use(express.session({ secret: 'superdeduperdesecreteykeyforsure' }));
-app.use(passport.initialize());
-app.use(passport.session());
-app.get('/', function (req, res){
-	res.render('index')
-})
-function ensureAuthenticated(req, res, next) {
-  if (req.isAuthenticated()) { return next(); }
-  req.session.error = 'Please sign in!';
-  res.redirect('/login');
-}
-// Session-persisted message middleware
-app.use(function(req, res, next){
-  const err = req.session.error,
-      msg = req.session.notice,
-      success = req.session.success;
-
-  delete req.session.error;
-  delete req.session.success;
-  delete req.session.notice;
-
-  if (err) res.locals.error = err;
-  if (msg) res.locals.notice = msg;
-  if (success) res.locals.success = success;
-
-  next();
-});
+app.use('/vendors/images', express.static(__dirname + '/vendors/images'));
+app.use('/build/css', express.static(__dirname + '/build/css'));
+app.use('/build/images', express.static(__dirname + '/build/images'));
+app.use('/build/js', express.static(__dirname + '/build/js'));
 
 app.get('/', function (req, res){
 	res.render('index')
@@ -92,10 +66,6 @@ app.get('/echarts', function (req, res){
 
 app.get('/calendar', function (req, res){
 	res.render('calendar')
-})
-
-app.get('/echarts', function (req, res){
-	res.render('echarts')
 })
 
 app.get('/chartjs', function (req, res){
