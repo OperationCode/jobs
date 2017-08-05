@@ -18,7 +18,7 @@
     //here we generate data for chart
     for (var i = 0; i < 30; i++) {
       d1.push([new Date(Date.today().add(i).days()).getTime(), randNum() + i + i + 10]);
-      //    d2.push([new Date(Date.today().add(i).days()).getTime(), randNum()]);
+          d2.push([new Date(Date.today().add(i).days()).getTime(), randNum()]);
     }
 
     var chartMinDate = d1[0][0]; //first day

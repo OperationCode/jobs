@@ -42,7 +42,7 @@
   },
   "paths": {
     "root": "src",
-    "main": "../build/js/custom.min.js",
+    "main": "..",
     "resources": "resources",
     "elements": "resources/elements",
     "attributes": "resources/attributes",
@@ -60,12 +60,12 @@
         "displayName": "Web",
         "output": "../build",
         "index": "index.html",
-        "baseDir": ".."
+        "baseDir": "../build"
       }
     ],
     "loader": {
       "type": "require",
-      "configTarget": "bundle.js",
+      "configTarget": "../build/bundle.js",
       "includeBundleMetadataInConfig": "auto",
       "plugins": [
         {

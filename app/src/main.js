@@ -1,7 +1,6 @@
 import environment from './environment';
-// import '../vendors';
-// import '../production';
-// import '../src';
+import './vendors';
+import './content';
 
 export function configure(aurelia) {
   aurelia.use
