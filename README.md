@@ -1,4 +1,5 @@
 # Operation Code Jobs Portal
+[![Feature Requests](http://feathub.com/OperationCode/jobs?format=svg)](http://feathub.com/OperationCode/jobs)
 -------
 ### Demo: => [Jobs Portal](https://sethbergman.engineer) <=
 
