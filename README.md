@@ -1,4 +1,7 @@
 # Operation Code Jobs Portal
+
+## NOTE - This is no longer under active development or maintenance, use at your own risk.
+
 [![Feature Requests](http://feathub.com/OperationCode/jobs?format=svg)](http://feathub.com/OperationCode/jobs)
 -------
 ### Demo: => [Jobs Portal](https://sethbergman.engineer) <=
